@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjhqnam7pdjcq"]
+
+[ext_resource type="Script" uid="uid://bvjw5pxf33704" path="res://_GUI/menus/settings/components/volume_controller/volume_controller.gd" id="1_6vn0k"]
+[ext_resource type="Texture2D" uid="uid://6jrykdk2pjua" path="res://common/textures/icons/audioOn.png" id="1_cra6v"]
+
+[node name="VolumeController" type="HBoxContainer" node_paths=PackedStringArray("volume_label", "volume_number", "volume_slider", "mute_button") groups=["Setting"]]
+script = ExtResource("1_6vn0k")
+volume_bus = "Master"
+volume_label = NodePath("Volume")
+volume_number = NodePath("Number")
+volume_slider = NodePath("Slider")
+mute_button = NodePath("MuteButton")
+
+[node name="Volume" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_type_variation = &"SettingLabel"
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "50"
+alignment = 1
+max_length = 3
+virtual_keyboard_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="Slider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+value = 50.0
+
+[node name="MuteButton" type="Button" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"MuteButton"
+toggle_mode = true
+icon = ExtResource("1_cra6v")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]
+[connection signal="toggled" from="MuteButton" to="." method="_on_mute_button_toggled"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpwc0pahmu2lw"]
+
+[ext_resource type="Script" uid="uid://4utau75kf3sj" path="res://GameMaster/game_master.gd" id="1_k60wq"]
+[ext_resource type="Script" uid="uid://c11e7eordvw3b" path="res://GameMaster/master_3d.gd" id="2_cd663"]
+[ext_resource type="Script" uid="uid://du18qduvmqb4f" path="res://MultiplayerMaster/multiplayer_manager.gd" id="2_grqha"]
+[ext_resource type="Script" uid="uid://cw6h3irelx2ok" path="res://GameMaster/master_gui.gd" id="2_j8k6l"]
+[ext_resource type="Script" uid="uid://cp17qwcrqcdwv" path="res://GameMaster/master_2d.gd" id="3_k3hqf"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_k60wq")
+
+[node name="MultiplayerManager" type="Node" parent="."]
+process_mode = 4
+script = ExtResource("2_grqha")
+
+[node name="Players" type="Node" parent="MultiplayerManager"]
+
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="MultiplayerManager"]
+_spawnable_scenes = PackedStringArray("uid://ckm72g5pswfem")
+spawn_path = NodePath("../Players")
+
+[node name="Master3D" type="Node3D" parent="."]
+script = ExtResource("2_cd663")
+
+[node name="Master2D" type="Node2D" parent="."]
+script = ExtResource("3_k3hqf")
+
+[node name="MasterGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_j8k6l")
+
+[node name="FPSLabel" type="Label" parent="MasterGUI"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 23.0
+text = "FPS: 0"

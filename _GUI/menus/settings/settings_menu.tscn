@@ -1,0 +1,164 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3peiw5sl8h8y"]
+
+[ext_resource type="Theme" uid="uid://1ixfa0cub38u" path="res://common/style/menu_theme.tres" id="1_iudjn"]
+[ext_resource type="Script" uid="uid://e04p6s8b26ei" path="res://_GUI/menus/settings/settings_menu.gd" id="1_nfbvk"]
+[ext_resource type="PackedScene" uid="uid://cjhqnam7pdjcq" path="res://_GUI/menus/settings/components/volume_controller/volume_controller.tscn" id="5_r77f1"]
+[ext_resource type="PackedScene" uid="uid://d2opqj3q2ijhd" path="res://_GUI/menus/settings/components/video_controller/video_settings.tscn" id="5_y0o0k"]
+
+[sub_resource type="Gradient" id="Gradient_liytd"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ijfi8"]
+gradient = SubResource("Gradient_liytd")
+fill_from = Vector2(0, 1)
+
+[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("audio_tab", "video_tab", "controls_tab", "audio_settings", "video_settings", "control_settings")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iudjn")
+script = ExtResource("1_nfbvk")
+audio_tab = NodePath("SettingsMargin/MainVertical/TabButtons/Audio")
+video_tab = NodePath("SettingsMargin/MainVertical/TabButtons/Video")
+controls_tab = NodePath("SettingsMargin/MainVertical/TabButtons/Controls")
+audio_settings = NodePath("SettingsMargin/MainVertical/AudioTab")
+video_settings = NodePath("SettingsMargin/MainVertical/VideoTab")
+control_settings = NodePath("SettingsMargin/MainVertical/ControlsTab")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ijfi8")
+
+[node name="SettingsMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"SettingsMargin"
+
+[node name="MainVertical" type="VBoxContainer" parent="SettingsMargin"]
+layout_mode = 2
+
+[node name="TabButtons" type="HBoxContainer" parent="SettingsMargin/MainVertical"]
+layout_mode = 2
+alignment = 1
+
+[node name="Audio" type="Label" parent="SettingsMargin/MainVertical/TabButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 0
+theme_type_variation = &"SettingsTab"
+text = "Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabUnderline" type="Line2D" parent="SettingsMargin/MainVertical/TabButtons/Audio"]
+position = Vector2(-272, -10)
+points = PackedVector2Array(324, 57, 414, 57)
+width = 4.0
+default_color = Color(0.882353, 0.203922, 0.117647, 1)
+
+[node name="Video" type="Label" parent="SettingsMargin/MainVertical/TabButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 0
+theme_type_variation = &"SettingsTab"
+text = "Video"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabUnderline" type="Line2D" parent="SettingsMargin/MainVertical/TabButtons/Video"]
+visible = false
+position = Vector2(-272, -10)
+points = PackedVector2Array(324, 57, 414, 57)
+width = 4.0
+default_color = Color(0.882353, 0.203922, 0.117647, 1)
+
+[node name="Controls" type="Label" parent="SettingsMargin/MainVertical/TabButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 0
+theme_type_variation = &"SettingsTab"
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabUnderline" type="Line2D" parent="SettingsMargin/MainVertical/TabButtons/Controls"]
+visible = false
+position = Vector2(-272, -10)
+points = PackedVector2Array(319, 57, 426, 57)
+width = 4.0
+default_color = Color(0.882353, 0.203922, 0.117647, 1)
+
+[node name="LineSeparator" type="HSeparator" parent="SettingsMargin/MainVertical"]
+layout_mode = 2
+
+[node name="AudioTab" type="CenterContainer" parent="SettingsMargin/MainVertical"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Settings" type="VBoxContainer" parent="SettingsMargin/MainVertical/AudioTab"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+
+[node name="MasterVolume" parent="SettingsMargin/MainVertical/AudioTab/Settings" instance=ExtResource("5_r77f1")]
+layout_mode = 2
+
+[node name="MusicVolume" parent="SettingsMargin/MainVertical/AudioTab/Settings" instance=ExtResource("5_r77f1")]
+layout_mode = 2
+volume_bus = "Music"
+
+[node name="EffectsVolume" parent="SettingsMargin/MainVertical/AudioTab/Settings" instance=ExtResource("5_r77f1")]
+layout_mode = 2
+volume_bus = "Effects"
+
+[node name="VideoTab" type="CenterContainer" parent="SettingsMargin/MainVertical"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VideoSettings" parent="SettingsMargin/MainVertical/VideoTab" instance=ExtResource("5_y0o0k")]
+layout_mode = 2
+
+[node name="ControlsTab" type="CenterContainer" parent="SettingsMargin/MainVertical"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LineSeparator2" type="HSeparator" parent="SettingsMargin/MainVertical"]
+layout_mode = 2
+
+[node name="BottomButtons" type="HBoxContainer" parent="SettingsMargin/MainVertical"]
+layout_mode = 2
+alignment = 1
+
+[node name="Default" type="Button" parent="SettingsMargin/MainVertical/BottomButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Default"
+
+[node name="Back" type="Button" parent="SettingsMargin/MainVertical/BottomButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Back"
+
+[connection signal="gui_input" from="SettingsMargin/MainVertical/TabButtons/Audio" to="." method="_on_label_clicked" binds= [0]]
+[connection signal="gui_input" from="SettingsMargin/MainVertical/TabButtons/Video" to="." method="_on_label_clicked" binds= [1]]
+[connection signal="gui_input" from="SettingsMargin/MainVertical/TabButtons/Controls" to="." method="_on_label_clicked" binds= [2]]
+[connection signal="pressed" from="SettingsMargin/MainVertical/BottomButtons/Default" to="." method="_on_default_pressed"]
+[connection signal="pressed" from="SettingsMargin/MainVertical/BottomButtons/Back" to="." method="_on_back_pressed"]

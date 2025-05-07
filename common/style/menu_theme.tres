@@ -1,0 +1,68 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://1ixfa0cub38u"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gv074"]
+color = Color(1, 0.509804, 0, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w13ji"]
+bg_color = Color(0.992577, 0.584585, 0.512486, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlgww"]
+bg_color = Color(0.882353, 0.203922, 0.117647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruani"]
+bg_color = Color(1.6942e-05, 0.955761, 0.215352, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lan6h"]
+bg_color = Color(0.652399, 0.0645353, 0.0777981, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Gradient" id="Gradient_kjxm6"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l7cme"]
+gradient = SubResource("Gradient_kjxm6")
+width = 1
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_e2g5p"]
+color = Color(1, 0.509804, 0, 1)
+thickness = 2
+vertical = true
+
+[sub_resource type="SystemFont" id="SystemFont_4cqg7"]
+
+[resource]
+default_font = SubResource("SystemFont_4cqg7")
+Button/font_sizes/font_size = 24
+GameTitle/base_type = &"Label"
+GameTitle/font_sizes/font_size = 50
+HSeparator/styles/separator = SubResource("StyleBoxLine_gv074")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_w13ji")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_hlgww")
+MarginContainer/constants/margin_bottom = 100
+MarginContainer/constants/margin_left = 50
+MarginContainer/constants/margin_right = 50
+MarginContainer/constants/margin_top = 20
+MenuTitle/font_sizes/font_size = 30
+MuteButton/base_type = &"Button"
+MuteButton/styles/normal = SubResource("StyleBoxFlat_ruani")
+MuteButton/styles/pressed = SubResource("StyleBoxFlat_lan6h")
+OptionButton/font_sizes/font_size = 16
+SettingLabel/base_type = &"Label"
+SettingLabel/font_sizes/font_size = 26
+SettingsMargin/base_type = &"MarginContainer"
+SettingsMargin/constants/margin_bottom = 10
+SettingsMargin/constants/margin_left = 0
+SettingsMargin/constants/margin_right = 0
+SettingsMargin/constants/margin_top = 10
+SettingsTab/base_type = &"Label"
+SettingsTab/font_sizes/font_size = 24
+SpinBox/icons/updown = SubResource("GradientTexture1D_l7cme")
+VBoxContainer/constants/separation = 10
+VSeparator/styles/separator = SubResource("StyleBoxLine_e2g5p")

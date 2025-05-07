@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://csfbqq5q2k233"]
+
+[ext_resource type="Theme" uid="uid://1ixfa0cub38u" path="res://common/style/menu_theme.tres" id="1_ct0uv"]
+[ext_resource type="Script" uid="uid://dim33ey6nb4mo" path="res://_GUI/menus/main_menu/main_menu.gd" id="2_6b70k"]
+
+[sub_resource type="Gradient" id="Gradient_6h54t"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ljrg3"]
+gradient = SubResource("Gradient_6h54t")
+fill_from = Vector2(0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ct0uv")
+script = ExtResource("2_6b70k")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ljrg3")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"GameTitle"
+text = "Game Title"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Singleplayer" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Singleplayer"
+
+[node name="Multiplayer" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Multiplayer"
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Singleplayer" to="." method="_on_singleplayer_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

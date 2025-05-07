@@ -1,0 +1,150 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2opqj3q2ijhd"]
+
+[ext_resource type="Script" uid="uid://dp540a6c8xv5m" path="res://_GUI/menus/settings/components/video_controller/video_settings.gd" id="1_sy4rn"]
+
+[node name="VideoSettings" type="VBoxContainer" node_paths=PackedStringArray("display_modes", "res_options", "vsync_options", "fps_limit_options", "fps_count_toggle") groups=["Setting"]]
+custom_minimum_size = Vector2(600, 0)
+script = ExtResource("1_sy4rn")
+display_modes = NodePath("DisplayRow/DisplayOptions")
+res_options = NodePath("WindowRow/ResolutionOptions")
+vsync_options = NodePath("VSyncRow/VSyncOptions")
+fps_limit_options = NodePath("FPSLimit/FPSLimitOptions")
+fps_count_toggle = NodePath("FPSCount/FPSCountToggle")
+
+[node name="DisplayRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="DisplayMode" type="Label" parent="DisplayRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingLabel"
+text = "Display Mode"
+
+[node name="DisplayOptions" type="OptionButton" parent="DisplayRow"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+selected = 1
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Maximized"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2
+popup/item_3/text = "Exclusive Fullscreen"
+popup/item_3/id = 5
+
+[node name="WindowRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="WindowRes" type="Label" parent="WindowRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingLabel"
+text = "Window Resolution"
+
+[node name="ResolutionOptions" type="OptionButton" parent="WindowRow"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "854 x 480"
+popup/item_0/id = 1
+popup/item_1/text = "1152 x 648"
+popup/item_1/id = 1
+popup/item_2/text = "1280 x 720"
+popup/item_2/id = 2
+popup/item_3/text = "1920 x 1080"
+popup/item_3/id = 3
+
+[node name="VSyncRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="VSync" type="Label" parent="VSyncRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingLabel"
+text = "VSync"
+
+[node name="VSyncOptions" type="OptionButton" parent="VSyncRow"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "Disabled"
+popup/item_0/id = 1
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+popup/item_2/text = "Adaptive"
+popup/item_2/id = 2
+popup/item_3/text = "Mailbox"
+popup/item_3/id = 3
+
+[node name="FPSLimit" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="FPSLimit" type="Label" parent="FPSLimit"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingLabel"
+text = "FPS Limit"
+
+[node name="FPSLimitOptions" type="OptionButton" parent="FPSLimit"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+fit_to_longest_item = false
+item_count = 11
+popup/item_0/text = "Unlimited"
+popup/item_0/id = 0
+popup/item_1/text = "240"
+popup/item_1/id = 1
+popup/item_2/text = "200"
+popup/item_2/id = 2
+popup/item_3/text = "180"
+popup/item_3/id = 3
+popup/item_4/text = "165"
+popup/item_4/id = 4
+popup/item_5/text = "160"
+popup/item_5/id = 5
+popup/item_6/text = "144"
+popup/item_6/id = 6
+popup/item_7/text = "120"
+popup/item_7/id = 7
+popup/item_8/text = "100"
+popup/item_8/id = 8
+popup/item_9/text = "60"
+popup/item_9/id = 9
+popup/item_10/text = "30"
+popup/item_10/id = 10
+
+[node name="FPSCount" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="FPSCount" type="Label" parent="FPSCount"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingLabel"
+text = "FPS Count"
+
+[node name="FPSCountToggle" type="CheckButton" parent="FPSCount"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_mode = 0
+alignment = 2
+
+[connection signal="item_selected" from="DisplayRow/DisplayOptions" to="." method="_on_display_options_item_selected"]
+[connection signal="item_selected" from="WindowRow/ResolutionOptions" to="." method="_on_resolution_options_item_selected"]
+[connection signal="item_selected" from="VSyncRow/VSyncOptions" to="." method="_on_v_sync_options_item_selected"]
+[connection signal="item_selected" from="FPSLimit/FPSLimitOptions" to="." method="_on_fps_limit_options_item_selected"]
+[connection signal="toggled" from="FPSCount/FPSCountToggle" to="." method="_on_fps_count_toggle_toggled"]
