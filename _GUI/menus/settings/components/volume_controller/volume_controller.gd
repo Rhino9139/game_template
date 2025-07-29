@@ -26,7 +26,7 @@ func _on_slider_value_changed(value: float) -> void:
 	var new_vol: float = (value / 2.0) - 50.0
 	new_vol = clamp(new_vol, -50.0, 0.0)
 	AudioServer.set_bus_volume_db(bus_index, new_vol)
-	volume_number.text = str(value)
+	volume_number.text = str(int(value))
 	ConfigManager.set_config("Audio", volume_bus, value / 100.0)
 
 func _on_mute_button_toggled(toggled_on: bool) -> void:

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GAME_TEMPLATE"
-run/main_scene="res://_Game/game_master.tscn"
+run/main_scene="res://_Game/game.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://common/textures/images/template_icon.png"
 
@@ -21,14 +21,13 @@ buses/default_bus_layout="res://common/audio/default_bus_layout.tres"
 
 [autoload]
 
-DevMode="*res://common/autoloads/dev_mode.gd"
-HathoraSDK="*res://addons/hathora/sdk/client.gd"
+DevMode="*res://autoloads/dev_mode.gd"
+EventBus="*res://autoloads/event_bus.gd"
+ConfigManager="*res://autoloads/config_manager.gd"
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor]
 
@@ -36,12 +35,32 @@ run/main_run_args="Single"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/favorite_scenes/plugin.cfg", "res://addons/hathora/plugin/plugin.cfg", "res://addons/hathora/sdk/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/favorite_scenes/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://MultiplayerMaster/": "purple",
+"res://_3D/": "red",
+"res://_GUI/": "green",
+"res://_GUI/menus/main/": "yellow",
+"res://_GUI/menus/settings/": "yellow",
+"res://_Game/": "blue",
+"res://addons/": "gray",
+"res://autoloads/": "gray",
+"res://common/": "gray",
+"res://imports/": "gray"
+}
 
 [global_group]
 
 Setting=""
 Menu=""
+
+[gui]
+
+theme/custom="uid://1ixfa0cub38u"
+theme/custom_font="uid://blxcemsks0y84"
 
 [input]
 

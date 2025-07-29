@@ -3,26 +3,32 @@ extends Control
 
 static var MASTER: MasterGUI
 
-static var main_menu: Menu
-static var settings_menu: Menu
+var current_menu: Menu
 
-static var FPS_LABEL: Label
-
-static func GO_TO_MAIN() -> void:
-	MASTER.clear_menus()
-	MASTER.add_child(Menu.CREATE_MAIN_MENU())
-
-static func GO_TO_SETTINGS() -> void:
-	MASTER.clear_menus()
-	MASTER.add_child(Menu.CREATE_SETTINGS_MENU())
 
 func _init() -> void:
 	MASTER = self
 
-func _ready() -> void:
-	FPS_LABEL = find_child("FPSLabel")
 
-func clear_menus() -> void:
-	for child in get_children():
-		if child is Menu:
-			child.queue_free()
+func _ready() -> void:
+	EventBus.program_started.connect(_on_program_started)
+	EventBus.menu_changed.connect(_on_menu_changed)
+	EventBus.singleplayer_clicked.connect(_on_singleplayer_clicked)
+
+
+func _on_program_started() -> void:
+	current_menu = Menu.CREATE(Menu.HeadType.MAIN)
+	add_child(current_menu)
+
+
+func _on_menu_changed(new_head_type: Menu.HeadType) -> void:
+	if current_menu:
+		current_menu.queue_free()
+	
+	current_menu = Menu.CREATE(new_head_type)
+	add_child(current_menu)
+
+
+func _on_singleplayer_clicked() -> void:
+	if current_menu:
+		current_menu.queue_free()
