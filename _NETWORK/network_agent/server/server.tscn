@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctvmluvivjfbm"]
+
+[ext_resource type="Script" uid="uid://b6inojlvlc6vw" path="res://_NETWORK/network_agent/server/server.gd" id="1_7xdqf"]
+
+[node name="Server" type="Node"]
+script = ExtResource("1_7xdqf")

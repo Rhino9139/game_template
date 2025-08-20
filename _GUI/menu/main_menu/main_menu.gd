@@ -1,4 +1,4 @@
-extends Menu
+extends Control
 
 
 func _on_singleplayer_pressed() -> void:

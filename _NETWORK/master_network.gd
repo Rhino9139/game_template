@@ -1,38 +1,37 @@
 extends Node
 
 @export var roster: Roster
-@export var client: Client
-@export var server: Server
+@export var network_agent: NetworkAgent
 
 
-func _ready() -> void:
-	if DisplayServer.get_name() == "headless":
-		create_server()
-	else:
-		create_client()
+#func _ready() -> void:
+	#if DisplayServer.get_name() == "headless":
+		#create_server()
+	#else:
+		#create_client()
 
 
 func create_server() -> void:
-	server.start_server()
+	network_agent.start_server()
 	multiplayer.peer_connected.connect(_peer_connected)
 	multiplayer.peer_disconnected.connect(_peer_disconnected)
 
 
 func destroy_server() -> void:
-	server.stop_server()
+	network_agent.stop_server()
 	multiplayer.peer_connected.disconnect(_peer_connected)
 	multiplayer.peer_disconnected.disconnect(_peer_disconnected)
 
 
 func create_client() -> void:
-	client.start_client()
+	network_agent.start_client()
 	multiplayer.connected_to_server.connect(_connected_to_server)
 	multiplayer.server_disconnected.connect(_server_disconnected)
 	multiplayer.connection_failed.connect(_connection_failed)
 
 
 func destroy_client() -> void:
-	client.stop_client()
+	network_agent.stop_client()
 	multiplayer.connected_to_server.disconnect(_connected_to_server)
 	multiplayer.server_disconnected.disconnect(_server_disconnected)
 	multiplayer.connection_failed.disconnect(_connection_failed)
@@ -49,7 +48,7 @@ func _peer_disconnected(id: int) -> void:
 
 
 func _connected_to_server() -> void:
-	print("Connected to Server at ", Server._HOST_IP)
+	print("Connected to Server at ", NetworkAgent._HOST_IP)
 
 
 func _server_disconnected() -> void:
