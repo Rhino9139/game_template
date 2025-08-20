@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2opqj3q2ijhd"]
 
-[ext_resource type="Script" uid="uid://dp540a6c8xv5m" path="res://_GUI/menus/settings/components/video_controller/video_settings.gd" id="1_sy4rn"]
+[ext_resource type="Script" uid="uid://dp540a6c8xv5m" path="res://_GUI/menu/settings/components/video_controller/video_settings.gd" id="1_sy4rn"]
 
 [node name="VideoSettings" type="VBoxContainer" node_paths=PackedStringArray("display_modes", "vsync_options", "fps_limit_options", "fps_visible_toggle")]
 custom_minimum_size = Vector2(600, 0)

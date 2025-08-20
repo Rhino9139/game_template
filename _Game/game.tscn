@@ -1,33 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpwc0pahmu2lw"]
+[gd_scene load_steps=9 format=3 uid="uid://cpwc0pahmu2lw"]
 
-[ext_resource type="Script" uid="uid://4utau75kf3sj" path="res://_Game/game.gd" id="1_2ilop"]
-[ext_resource type="Script" uid="uid://du18qduvmqb4f" path="res://MultiplayerMaster/multiplayer_manager.gd" id="2_w3h00"]
-[ext_resource type="Script" uid="uid://c11e7eordvw3b" path="res://_Game/master_3d.gd" id="3_2ilop"]
-[ext_resource type="Script" uid="uid://cw6h3irelx2ok" path="res://_Game/master_gui.gd" id="3_kk43c"]
-[ext_resource type="Script" uid="uid://cp17qwcrqcdwv" path="res://_Game/master_2d.gd" id="4_w3h00"]
+[ext_resource type="Script" uid="uid://4utau75kf3sj" path="res://_GAME/game.gd" id="1_2ilop"]
+[ext_resource type="Script" uid="uid://eerfj7xeaknm" path="res://_NETWORK/master_network.gd" id="2_jyme5"]
+[ext_resource type="Script" uid="uid://bcchncd60rclc" path="res://_NETWORK/roster/roster.gd" id="2_li6ea"]
+[ext_resource type="Script" uid="uid://c11e7eordvw3b" path="res://_GAME/master_3d.gd" id="3_2ilop"]
+[ext_resource type="Script" uid="uid://cw6h3irelx2ok" path="res://_GAME/master_gui.gd" id="3_kk43c"]
+[ext_resource type="Script" uid="uid://q1kd4xynnmra" path="res://_NETWORK/client/client.gd" id="4_b2ajd"]
+[ext_resource type="Script" uid="uid://b6inojlvlc6vw" path="res://_NETWORK/server/server.gd" id="5_d0jka"]
+[ext_resource type="Script" uid="uid://dbctvs60t1auo" path="res://_GUI/menu/menu.gd" id="8_d0jka"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_2ilop")
 
-[node name="MultiplayerManager" type="Node" parent="."]
+[node name="MasterNetwork" type="Node" parent="." node_paths=PackedStringArray("roster", "client", "server")]
 process_mode = 4
-script = ExtResource("2_w3h00")
+script = ExtResource("2_jyme5")
+roster = NodePath("_Roster")
+client = NodePath("_Client")
+server = NodePath("_Server")
 
-[node name="PlayerList" type="Node" parent="MultiplayerManager"]
+[node name="_Roster" type="Node" parent="MasterNetwork" node_paths=PackedStringArray("player_spawner", "player_list")]
+script = ExtResource("2_li6ea")
+player_spawner = NodePath("PlayerSpawner")
+player_list = NodePath("PlayerList")
+metadata/_custom_type_script = "uid://bcchncd60rclc"
 
-[node name="PlayerSpawner" type="MultiplayerSpawner" parent="MultiplayerManager"]
-_spawnable_scenes = PackedStringArray("uid://ckm72g5pswfem")
+[node name="PlayerList" type="Node" parent="MasterNetwork/_Roster"]
+
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="MasterNetwork/_Roster"]
 spawn_path = NodePath("../PlayerList")
 
-[node name="Master3D" type="Node3D" parent="."]
+[node name="_Client" type="Node" parent="MasterNetwork"]
+script = ExtResource("4_b2ajd")
+metadata/_custom_type_script = "uid://q1kd4xynnmra"
+
+[node name="_Server" type="Node" parent="MasterNetwork"]
+script = ExtResource("5_d0jka")
+metadata/_custom_type_script = "uid://b6inojlvlc6vw"
+
+[node name="3D" type="Node3D" parent="."]
 script = ExtResource("3_2ilop")
 
-[node name="Master2D" type="Node2D" parent="."]
-script = ExtResource("4_w3h00")
-
-[node name="GUICanvas" type="CanvasLayer" parent="."]
-
-[node name="MasterGUI" type="Control" parent="GUICanvas"]
+[node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,3 +50,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("3_kk43c")
+
+[node name="_Menu" type="Control" parent="GUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_d0jka")
+metadata/_custom_type_script = "uid://dbctvs60t1auo"

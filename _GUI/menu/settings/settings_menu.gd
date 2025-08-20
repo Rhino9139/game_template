@@ -2,7 +2,7 @@ extends Menu
 
 
 func _on_back_pressed() -> void:
-	EventBus.menu_changed.emit(Menu.HeadType.MAIN)
+	pass
 
 
 func _on_default_pressed() -> void:

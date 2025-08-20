@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GAME_TEMPLATE"
-run/main_scene="res://_Game/game.tscn"
+run/main_scene="res://_GAME/game.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://common/textures/images/template_icon.png"
 
@@ -22,7 +22,7 @@ buses/default_bus_layout="res://common/audio/default_bus_layout.tres"
 [autoload]
 
 DevMode="*res://autoloads/dev_mode.gd"
-EventBus="*res://autoloads/event_bus.gd"
+Events="*res://autoloads/events.gd"
 ConfigManager="*res://autoloads/config_manager.gd"
 
 [display]
@@ -40,12 +40,22 @@ enabled=PackedStringArray("res://addons/favorite_scenes/plugin.cfg", "res://addo
 [file_customization]
 
 folder_colors={
-"res://MultiplayerMaster/": "purple",
-"res://_3D/": "red",
-"res://_GUI/": "green",
-"res://_GUI/menus/main/": "yellow",
-"res://_GUI/menus/settings/": "yellow",
-"res://_Game/": "blue",
+"res://_3D/": "blue",
+"res://_3D/character/": "red",
+"res://_3D/character/state_machine/": "green",
+"res://_3D/materials/": "red",
+"res://_3D/world/": "red",
+"res://_3D/world/levels/": "green",
+"res://_GAME/": "blue",
+"res://_GUI/": "blue",
+"res://_GUI/menu/": "red",
+"res://_GUI/menu/main_menu/": "green",
+"res://_GUI/menu/settings/": "green",
+"res://_NETWORK/": "blue",
+"res://_NETWORK/client/": "red",
+"res://_NETWORK/roster/": "red",
+"res://_NETWORK/roster/player/": "green",
+"res://_NETWORK/server/": "red",
 "res://addons/": "gray",
 "res://autoloads/": "gray",
 "res://common/": "gray",

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckm72g5pswfem"]
+
+[ext_resource type="Script" uid="uid://cm4fyk6ret3u" path="res://_NETWORK/roster/player/player.gd" id="1_7ivwr"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_71e58"]
+properties/0/path = NodePath(".:gamer_tag")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="Player" type="Node"]
+script = ExtResource("1_7ivwr")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_71e58")

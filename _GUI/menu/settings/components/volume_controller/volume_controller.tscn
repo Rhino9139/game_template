@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjhqnam7pdjcq"]
 
-[ext_resource type="Script" uid="uid://bvjw5pxf33704" path="res://_GUI/menus/settings/components/volume_controller/volume_controller.gd" id="1_6vn0k"]
+[ext_resource type="Script" uid="uid://bvjw5pxf33704" path="res://_GUI/menu/settings/components/volume_controller/volume_controller.gd" id="1_6vn0k"]
 [ext_resource type="Texture2D" uid="uid://6jrykdk2pjua" path="res://common/textures/icons/audioOn.png" id="1_cra6v"]
 
 [node name="VolumeController" type="HBoxContainer" node_paths=PackedStringArray("volume_label", "volume_number", "volume_slider", "mute_button") groups=["Setting"]]

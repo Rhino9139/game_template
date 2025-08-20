@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://c3peiw5sl8h8y"]
 
-[ext_resource type="Script" uid="uid://e04p6s8b26ei" path="res://_GUI/menus/settings/settings_menu.gd" id="1_nfbvk"]
-[ext_resource type="PackedScene" uid="uid://cjhqnam7pdjcq" path="res://_GUI/menus/settings/components/volume_controller/volume_controller.tscn" id="5_r77f1"]
-[ext_resource type="PackedScene" uid="uid://d2opqj3q2ijhd" path="res://_GUI/menus/settings/components/video_controller/video_settings.tscn" id="5_y0o0k"]
+[ext_resource type="Script" uid="uid://e04p6s8b26ei" path="res://_GUI/menu/settings/settings_menu.gd" id="1_nfbvk"]
+[ext_resource type="PackedScene" uid="uid://cjhqnam7pdjcq" path="res://_GUI/menu/settings/components/volume_controller/volume_controller.tscn" id="5_r77f1"]
+[ext_resource type="PackedScene" uid="uid://d2opqj3q2ijhd" path="res://_GUI/menu/settings/components/video_controller/video_settings.tscn" id="5_y0o0k"]
 
 [sub_resource type="Gradient" id="Gradient_liytd"]
 

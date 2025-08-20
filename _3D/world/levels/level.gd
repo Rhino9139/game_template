@@ -8,6 +8,3 @@ const _PATHS: Dictionary[int, String] = {
 static func CREATE(index: int) -> Level:
 	var new_level: Level = load(_PATHS[index]).instantiate()
 	return new_level
-
-func _ready() -> void:
-	EventBus.level_loaded.emit()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://csfbqq5q2k233"]
 
-[ext_resource type="Script" uid="uid://dim33ey6nb4mo" path="res://_GUI/menus/main/main_menu.gd" id="2_6b70k"]
+[ext_resource type="Script" uid="uid://dim33ey6nb4mo" path="res://_GUI/menu/main_menu/main_menu.gd" id="2_6b70k"]
 
 [sub_resource type="Gradient" id="Gradient_6h54t"]
 
