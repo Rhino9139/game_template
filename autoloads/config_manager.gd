@@ -1,8 +1,5 @@
 extends Node
 
-@warning_ignore("unused_signal")
-signal config_changed
-
 const _CONFIG_FILE_PATH: String = "res://config.cfg"
 
 var CONFIG_FILE: ConfigFile = null
@@ -33,7 +30,6 @@ func set_config(section: String, key: String, value: Variant) -> void:
 	load_config_file()
 	CONFIG_FILE.set_value(section, key, value)
 	save_config_file()
-	config_changed.emit()
 
 
 func get_config(section: String, key: String) -> Variant:

@@ -74,18 +74,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_tab_index = 0
 
-[node name="Settings" type="VBoxContainer" parent="PageMargin/PageColumn/Sections/Audio"]
+[node name="Column" type="VBoxContainer" parent="PageMargin/PageColumn/Sections/Audio"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 
-[node name="MasterVolume" parent="PageMargin/PageColumn/Sections/Audio/Settings" instance=ExtResource("5_r77f1")]
+[node name="MasterVolume" parent="PageMargin/PageColumn/Sections/Audio/Column" instance=ExtResource("5_r77f1")]
 layout_mode = 2
 
-[node name="MusicVolume" parent="PageMargin/PageColumn/Sections/Audio/Settings" instance=ExtResource("5_r77f1")]
+[node name="MusicVolume" parent="PageMargin/PageColumn/Sections/Audio/Column" instance=ExtResource("5_r77f1")]
 layout_mode = 2
 volume_bus = "Music"
 
-[node name="EffectsVolume" parent="PageMargin/PageColumn/Sections/Audio/Settings" instance=ExtResource("5_r77f1")]
+[node name="EffectsVolume" parent="PageMargin/PageColumn/Sections/Audio/Column" instance=ExtResource("5_r77f1")]
 layout_mode = 2
 volume_bus = "Effects"
 
@@ -111,14 +111,6 @@ layout_mode = 2
 layout_mode = 2
 alignment = 1
 
-[node name="Default" type="Button" parent="PageMargin/PageColumn/BottomButtons"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-focus_mode = 0
-action_mode = 0
-text = "Default"
-
 [node name="Back" type="Button" parent="PageMargin/PageColumn/BottomButtons"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -127,5 +119,13 @@ focus_mode = 0
 action_mode = 0
 text = "Back"
 
-[connection signal="pressed" from="PageMargin/PageColumn/BottomButtons/Default" to="." method="_on_default_pressed"]
+[node name="Default" type="Button" parent="PageMargin/PageColumn/BottomButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+focus_mode = 0
+action_mode = 0
+text = "Default"
+
 [connection signal="pressed" from="PageMargin/PageColumn/BottomButtons/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PageMargin/PageColumn/BottomButtons/Default" to="." method="_on_default_pressed"]

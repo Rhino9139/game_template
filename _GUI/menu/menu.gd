@@ -8,16 +8,28 @@ const _PATHS: Dictionary[GameObject, String] = {
 	GameObject.SETTINGS : "uid://c3peiw5sl8h8y",
 }
 
+static var CONTROLLER: Controller = Controller.new()
+
 var current_menu: Control
 
 
-func add_menu(new_head_type: GameObject) -> Menu:
+func _ready() -> void:
+	CONTROLLER.change_menu.connect(_change_menu)
+	CONTROLLER.clear_menu.connect(_clear_menu)
+
+
+func _change_menu(new_menu: GameObject) -> void:
 	_clear_menu()
-	
-	var new_menu: Control = load(_PATHS[new_head_type]).instantiate()
-	return new_menu
+	current_menu = load(_PATHS[new_menu]).instantiate()
+	add_child(current_menu)
 
 
 func _clear_menu() -> void:
 	if current_menu:
 		current_menu.queue_free()
+
+
+@warning_ignore_start("unused_signal")
+class Controller:
+	signal change_menu(new_menu: Menu.GameObject)
+	signal clear_menu

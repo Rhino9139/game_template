@@ -17,7 +17,7 @@ func _ready() -> void:
 	player_spawner.spawn_function = __spawn_player
 
 
-func create_player(new_id: int) -> void:
+func add_player(new_id: int) -> void:
 	player_spawner.spawn(new_id)
 
 
