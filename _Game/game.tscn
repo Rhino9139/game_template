@@ -7,9 +7,8 @@
 [ext_resource type="Script" uid="uid://bkham1wurmxsm" path="res://_GUI/hud/hud.gd" id="8_gli1n"]
 [ext_resource type="Script" uid="uid://cejcyr68nupsw" path="res://_GUI/screen/screen.gd" id="9_6rorl"]
 
-[node name="Game" type="Node" node_paths=PackedStringArray("logic_bridge")]
+[node name="Game" type="Node"]
 script = ExtResource("1_2ilop")
-logic_bridge = NodePath("")
 
 [node name="MasterNetwork" type="Node" parent="."]
 process_mode = 4

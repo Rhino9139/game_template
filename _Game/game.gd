@@ -3,8 +3,6 @@ extends Node
 
 static var GAMER_TAG: String
 
-@export var logic_bridge: LogicBridge
-
 
 func _ready() -> void:
 	configure_settings()
