@@ -8,14 +8,12 @@ const _PATHS: Dictionary[GameObject, String] = {
 	GameObject.SETTINGS : "uid://c3peiw5sl8h8y",
 }
 
-static var CONTROLLER: Controller = Controller.new()
-
 var current_menu: Control
 
 
 func _ready() -> void:
-	CONTROLLER.change_menu.connect(_change_menu)
-	CONTROLLER.clear_menu.connect(_clear_menu)
+	Events.MENU_END.change_menu.connect(_change_menu)
+	Events.MENU_END.clear_menu.connect(_clear_menu)
 
 
 func _change_menu(new_menu: GameObject) -> void:
@@ -27,9 +25,3 @@ func _change_menu(new_menu: GameObject) -> void:
 func _clear_menu() -> void:
 	if current_menu:
 		current_menu.queue_free()
-
-
-@warning_ignore_start("unused_signal")
-class Controller:
-	signal change_menu(new_menu: Menu.GameObject)
-	signal clear_menu

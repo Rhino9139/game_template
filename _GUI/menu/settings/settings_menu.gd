@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_back_pressed() -> void:
-	Menu.CONTROLLER.change_menu.emit(Menu.GameObject.MAIN)
+	Events.MENU_END.change_menu.emit(Menu.GameObject.MAIN)
 
 
 func _on_default_pressed() -> void:

@@ -6,7 +6,7 @@ static var GAMER_TAG: String
 
 func _ready() -> void:
 	configure_settings()
-	Menu.CONTROLLER.change_menu.emit(Menu.GameObject.MAIN)
+	Events.MENU_END.change_menu.emit(Menu.GameObject.MAIN)
 
 
 func configure_settings() -> void:

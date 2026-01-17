@@ -10,8 +10,8 @@ func _on_multiplayer_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	Menu.CONTROLLER.change_menu.emit(Menu.GameObject.SETTINGS)
+	Events.MENU_END.change_menu.emit(Menu.GameObject.SETTINGS)
 
 
 func _on_quit_pressed() -> void:
-	pass
+	get_tree().quit()

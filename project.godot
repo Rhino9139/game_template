@@ -53,7 +53,6 @@ folder_colors={
 "res://_GUI/menu/main_menu/": "green",
 "res://_GUI/menu/settings/": "green",
 "res://_GUI/menu/settings/components/": "yellow",
-"res://_GUI/screen/": "red",
 "res://_NETWORK/": "blue",
 "res://_NETWORK/network_agent/": "red",
 "res://_NETWORK/network_agent/client/": "green",
@@ -63,6 +62,7 @@ folder_colors={
 "res://addons/": "gray",
 "res://autoloads/": "gray",
 "res://common/": "gray",
+"res://custom/": "gray",
 "res://imports/": "gray"
 }
 

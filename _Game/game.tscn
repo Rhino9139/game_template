@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpwc0pahmu2lw"]
+[gd_scene load_steps=6 format=3 uid="uid://cpwc0pahmu2lw"]
 
 [ext_resource type="Script" uid="uid://4utau75kf3sj" path="res://_GAME/game.gd" id="1_2ilop"]
 [ext_resource type="Script" uid="uid://bcchncd60rclc" path="res://_NETWORK/roster/roster.gd" id="2_li6ea"]
 [ext_resource type="Script" uid="uid://cehx73ids6s8b" path="res://_NETWORK/network_agent/network_agent.gd" id="4_b2ajd"]
 [ext_resource type="Script" uid="uid://dbctvs60t1auo" path="res://_GUI/menu/menu.gd" id="8_d0jka"]
 [ext_resource type="Script" uid="uid://bkham1wurmxsm" path="res://_GUI/hud/hud.gd" id="8_gli1n"]
-[ext_resource type="Script" uid="uid://cejcyr68nupsw" path="res://_GUI/screen/screen.gd" id="9_6rorl"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_2ilop")
@@ -59,15 +58,8 @@ mouse_filter = 2
 script = ExtResource("8_gli1n")
 metadata/_custom_type_script = "uid://bkham1wurmxsm"
 
-[node name="_Screen" type="Control" parent="MasterGUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("9_6rorl")
-metadata/_custom_type_script = "uid://cejcyr68nupsw"
-
 [node name="Master3D" type="Node3D" parent="."]
+
+[node name="_World" type="Node3D" parent="Master3D"]
+
+[node name="_Unit" type="Node3D" parent="Master3D"]
