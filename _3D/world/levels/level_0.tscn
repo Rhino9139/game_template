@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://cadk6ard0gt6q"]
 
-[ext_resource type="Material" uid="uid://xhdbk0gxdtkn" path="res://_3D/materials/black_mat.tres" id="1_7af3o"]
+[ext_resource type="Material" uid="uid://xhdbk0gxdtkn" path="res://common/textures/materials/black_mat.tres" id="1_7af3o"]
 [ext_resource type="Script" uid="uid://b74jdsdir8i8c" path="res://_3D/world/levels/level.gd" id="1_mxpki"]
-[ext_resource type="Material" uid="uid://dniwyrsdmuuah" path="res://_3D/materials/orange_mat.tres" id="2_mxpki"]
+[ext_resource type="Material" uid="uid://dniwyrsdmuuah" path="res://common/textures/materials/orange_mat.tres" id="2_mxpki"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oe4wt"]
 sky_top_color = Color(0.186082, 0.454153, 0.75067, 1)

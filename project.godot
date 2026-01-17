@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GAME_TEMPLATE"
-run/main_scene="res://_GAME/game.tscn"
+run/main_scene="res://__GAME/game.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://common/textures/images/template_icon.png"
 
@@ -43,10 +43,8 @@ folder_colors={
 "res://_3D/": "blue",
 "res://_3D/character/": "red",
 "res://_3D/character/state_machine/": "green",
-"res://_3D/materials/": "red",
 "res://_3D/world/": "red",
 "res://_3D/world/levels/": "green",
-"res://_GAME/": "blue",
 "res://_GUI/": "blue",
 "res://_GUI/hud/": "red",
 "res://_GUI/menu/": "red",
@@ -59,9 +57,11 @@ folder_colors={
 "res://_NETWORK/network_agent/server/": "green",
 "res://_NETWORK/roster/": "red",
 "res://_NETWORK/roster/player/": "green",
+"res://__GAME/": "blue",
 "res://addons/": "gray",
 "res://autoloads/": "gray",
 "res://common/": "gray",
+"res://common/textures/materials/": "gray",
 "res://custom/": "gray",
 "res://imports/": "gray"
 }
