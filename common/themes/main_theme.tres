@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://1ixfa0cub38u"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://1ixfa0cub38u"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_gv074"]
 color = Color(1, 0.509804, 0, 1)
@@ -44,6 +44,13 @@ corner_radius_bottom_left = 5
 gradient = SubResource("Gradient_kjxm6")
 width = 1
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sw3fs"]
+color = Color(1, 0.509804, 0, 1)
+grow_begin = 6.0
+grow_end = 6.0
+thickness = 2
+vertical = true
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_e2g5p"]
 color = Color(1, 0.509804, 0, 1)
 thickness = 2
@@ -78,4 +85,6 @@ SettingsTab/base_type = &"Label"
 SettingsTab/font_sizes/font_size = 24
 SpinBox/icons/updown = SubResource("GradientTexture1D_l7cme")
 VBoxContainer/constants/separation = 10
+VListSep/base_type = &"VSeparator"
+VListSep/styles/separator = SubResource("StyleBoxLine_sw3fs")
 VSeparator/styles/separator = SubResource("StyleBoxLine_e2g5p")

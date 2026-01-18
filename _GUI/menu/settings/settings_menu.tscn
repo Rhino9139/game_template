@@ -12,18 +12,18 @@ fill_from = Vector2(0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5y0a"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5y0a"]
-content_margin_left = 8.0
-content_margin_right = 8.0
-draw_center = false
-border_width_bottom = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xg06l"]
 content_margin_left = 8.0
 content_margin_right = 8.0
 draw_center = false
 border_width_bottom = 4
 border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5y0a"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+draw_center = false
+border_width_bottom = 4
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -61,14 +61,15 @@ size_flags_vertical = 3
 theme_override_colors/font_unselected_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 theme_override_styles/panel = SubResource("StyleBoxEmpty_a5y0a")
-theme_override_styles/tab_selected = SubResource("StyleBoxFlat_a5y0a")
-theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_xg06l")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_xg06l")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_xg06l")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_a5y0a")
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 tab_focus_mode = 0
 
 [node name="Audio" type="CenterContainer" parent="PageMargin/PageColumn/Sections"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -99,10 +100,48 @@ metadata/_tab_index = 1
 layout_mode = 2
 
 [node name="Controls" type="CenterContainer" parent="PageMargin/PageColumn/Sections"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PageMargin/PageColumn/Sections/Controls"]
+layout_mode = 2
+
+[node name="Control1" type="HBoxContainer" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="Action" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control1"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+text = "Move Forward"
+
+[node name="VSeparator" type="VSeparator" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control1"]
+layout_mode = 2
+theme_type_variation = &"VListSep"
+
+[node name="Action2" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "W"
+horizontal_alignment = 1
+
+[node name="Control2" type="HBoxContainer" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="Action" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control2"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+text = "Move Forward"
+
+[node name="VSeparator" type="VSeparator" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control2"]
+layout_mode = 2
+theme_type_variation = &"VListSep"
+
+[node name="Action2" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "W"
+horizontal_alignment = 1
 
 [node name="PageBottomLine" type="HSeparator" parent="PageMargin/PageColumn"]
 layout_mode = 2
