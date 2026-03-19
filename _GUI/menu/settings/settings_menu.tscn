@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3peiw5sl8h8y"]
+[gd_scene format=3 uid="uid://c3peiw5sl8h8y"]
 
 [ext_resource type="Script" uid="uid://e04p6s8b26ei" path="res://_GUI/menu/settings/settings_menu.gd" id="1_nfbvk"]
 [ext_resource type="PackedScene" uid="uid://cjhqnam7pdjcq" path="res://_GUI/menu/settings/components/volume_controller/volume_controller.tscn" id="5_r77f1"]
@@ -25,7 +25,7 @@ content_margin_right = 8.0
 draw_center = false
 border_width_bottom = 4
 
-[node name="SettingsMenu" type="Control"]
+[node name="SettingsMenu" type="Control" unique_id=2120486439]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nfbvk")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1670178365]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_ijfi8")
 
-[node name="PageMargin" type="MarginContainer" parent="."]
+[node name="PageMargin" type="MarginContainer" parent="." unique_id=1078519194]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,10 +52,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"SettingsMargin"
 
-[node name="PageColumn" type="VBoxContainer" parent="PageMargin"]
+[node name="PageColumn" type="VBoxContainer" parent="PageMargin" unique_id=1787581892]
 layout_mode = 2
 
-[node name="Sections" type="TabContainer" parent="PageMargin/PageColumn"]
+[node name="Sections" type="TabContainer" parent="PageMargin/PageColumn" unique_id=781583714]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_unselected_color = Color(0, 0, 0, 1)
@@ -68,89 +68,89 @@ tab_alignment = 1
 current_tab = 2
 tab_focus_mode = 0
 
-[node name="Audio" type="CenterContainer" parent="PageMargin/PageColumn/Sections"]
+[node name="Audio" type="CenterContainer" parent="PageMargin/PageColumn/Sections" unique_id=1519333441]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_tab_index = 0
 
-[node name="Column" type="VBoxContainer" parent="PageMargin/PageColumn/Sections/Audio"]
+[node name="Column" type="VBoxContainer" parent="PageMargin/PageColumn/Sections/Audio" unique_id=1217548220]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 
-[node name="MasterVolume" parent="PageMargin/PageColumn/Sections/Audio/Column" instance=ExtResource("5_r77f1")]
+[node name="MasterVolume" parent="PageMargin/PageColumn/Sections/Audio/Column" unique_id=448988326 instance=ExtResource("5_r77f1")]
 layout_mode = 2
 
-[node name="MusicVolume" parent="PageMargin/PageColumn/Sections/Audio/Column" instance=ExtResource("5_r77f1")]
+[node name="MusicVolume" parent="PageMargin/PageColumn/Sections/Audio/Column" unique_id=1082750128 instance=ExtResource("5_r77f1")]
 layout_mode = 2
 volume_bus = "Music"
 
-[node name="EffectsVolume" parent="PageMargin/PageColumn/Sections/Audio/Column" instance=ExtResource("5_r77f1")]
+[node name="EffectsVolume" parent="PageMargin/PageColumn/Sections/Audio/Column" unique_id=89554348 instance=ExtResource("5_r77f1")]
 layout_mode = 2
 volume_bus = "Effects"
 
-[node name="Video" type="CenterContainer" parent="PageMargin/PageColumn/Sections"]
+[node name="Video" type="CenterContainer" parent="PageMargin/PageColumn/Sections" unique_id=1556845885]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 metadata/_tab_index = 1
 
-[node name="VideoSettings" parent="PageMargin/PageColumn/Sections/Video" instance=ExtResource("5_y0o0k")]
+[node name="VideoSettings" parent="PageMargin/PageColumn/Sections/Video" unique_id=673545415 instance=ExtResource("5_y0o0k")]
 layout_mode = 2
 
-[node name="Controls" type="CenterContainer" parent="PageMargin/PageColumn/Sections"]
+[node name="Controls" type="CenterContainer" parent="PageMargin/PageColumn/Sections" unique_id=116658427]
 layout_mode = 2
 size_flags_vertical = 3
 metadata/_tab_index = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PageMargin/PageColumn/Sections/Controls"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PageMargin/PageColumn/Sections/Controls" unique_id=91303610]
 layout_mode = 2
 
-[node name="Control1" type="HBoxContainer" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer"]
+[node name="Control1" type="HBoxContainer" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer" unique_id=553964785]
 layout_mode = 2
 
-[node name="Action" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control1"]
+[node name="Action" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control1" unique_id=1950688289]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 text = "Move Forward"
 
-[node name="VSeparator" type="VSeparator" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control1"]
+[node name="VSeparator" type="VSeparator" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control1" unique_id=473127126]
 layout_mode = 2
 theme_type_variation = &"VListSep"
 
-[node name="Action2" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control1"]
+[node name="Action2" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control1" unique_id=1558968869]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 text = "W"
 horizontal_alignment = 1
 
-[node name="Control2" type="HBoxContainer" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer"]
+[node name="Control2" type="HBoxContainer" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer" unique_id=214516417]
 layout_mode = 2
 
-[node name="Action" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control2"]
+[node name="Action" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control2" unique_id=1096166014]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 text = "Move Forward"
 
-[node name="VSeparator" type="VSeparator" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control2"]
+[node name="VSeparator" type="VSeparator" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control2" unique_id=606350259]
 layout_mode = 2
 theme_type_variation = &"VListSep"
 
-[node name="Action2" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control2"]
+[node name="Action2" type="Label" parent="PageMargin/PageColumn/Sections/Controls/VBoxContainer/Control2" unique_id=423712107]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 text = "W"
 horizontal_alignment = 1
 
-[node name="PageBottomLine" type="HSeparator" parent="PageMargin/PageColumn"]
+[node name="PageBottomLine" type="HSeparator" parent="PageMargin/PageColumn" unique_id=1577269288]
 layout_mode = 2
 
-[node name="BottomButtons" type="HBoxContainer" parent="PageMargin/PageColumn"]
+[node name="BottomButtons" type="HBoxContainer" parent="PageMargin/PageColumn" unique_id=561576761]
 layout_mode = 2
 alignment = 1
 
-[node name="Back" type="Button" parent="PageMargin/PageColumn/BottomButtons"]
+[node name="Back" type="Button" parent="PageMargin/PageColumn/BottomButtons" unique_id=976255679]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -158,7 +158,7 @@ focus_mode = 0
 action_mode = 0
 text = "Back"
 
-[node name="Default" type="Button" parent="PageMargin/PageColumn/BottomButtons"]
+[node name="Default" type="Button" parent="PageMargin/PageColumn/BottomButtons" unique_id=1483252936]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 6
