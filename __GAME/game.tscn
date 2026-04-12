@@ -24,6 +24,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="2D" type="Node2D" parent="." unique_id=1268230401]
+unique_name_in_owner = true
+
 [node name="3D" type="Node3D" parent="." unique_id=1685629066]
 unique_name_in_owner = true
 
@@ -51,7 +54,7 @@ process_mode = 4
 script = ExtResource("3_rejnc")
 metadata/_custom_type_script = "uid://buu45hved20q8"
 
-[node name="World" type="Node" parent="System" unique_id=819818766]
+[node name="Level" type="Node" parent="System" unique_id=819818766]
 process_mode = 4
 script = ExtResource("2_4elfq")
 metadata/_custom_type_script = "uid://cawdug2ywcffg"

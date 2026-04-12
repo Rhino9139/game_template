@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dyd2a5m0ql71m"]
 
-[ext_resource type="Script" uid="uid://17qquntmr72a" path="res://_ENTITIES/units/player/player.gd" id="1_x7ek6"]
+[ext_resource type="Script" uid="uid://17qquntmr72a" path="res://_ENTITIES/units3D/player/player.gd" id="1_x7ek6"]
 [ext_resource type="Script" uid="uid://dkxp5tuesiha6" path="res://abstract_classes/unit/player_state_machine.gd" id="2_l3yoa"]
 [ext_resource type="Material" uid="uid://d31jnsnbeyyf1" path="res://_ENTITIES/_common/materials/fresnel/fresnel_mat.tres" id="2_s1j4c"]
-[ext_resource type="Script" uid="uid://bqad74hgxe0gy" path="res://_ENTITIES/units/player/states/move_state.gd" id="3_xmqgs"]
-[ext_resource type="Script" uid="uid://d21pfuceijeuv" path="res://_ENTITIES/units/player/states/jump_state.gd" id="4_qk06k"]
+[ext_resource type="Script" uid="uid://bqad74hgxe0gy" path="res://_ENTITIES/units3D/player/states/move_state.gd" id="3_xmqgs"]
+[ext_resource type="Script" uid="uid://d21pfuceijeuv" path="res://_ENTITIES/units3D/player/states/jump_state.gd" id="4_qk06k"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_77vtv"]
 
@@ -14,7 +14,7 @@ material = ExtResource("2_s1j4c")
 [sub_resource type="SphereShape3D" id="SphereShape3D_t28kf"]
 radius = 0.1
 
-[node name="Player" type="CharacterBody3D" unique_id=904708815 node_paths=PackedStringArray("camera", "cam_h", "cam_v", "cam_raycast", "projectile_marker")]
+[node name="PlayerCharacter3D" type="CharacterBody3D" unique_id=904708815 node_paths=PackedStringArray("camera", "cam_h", "cam_v", "cam_raycast", "projectile_marker")]
 collision_layer = 128
 script = ExtResource("1_x7ek6")
 camera = NodePath("CamHorizontal/CamVertical/CamSpringArm/Camera3D")

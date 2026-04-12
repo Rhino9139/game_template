@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bdr3s4fqjuctj"]
 
-[ext_resource type="Script" uid="uid://bvkb6d3rbx004" path="res://_ENTITIES/units/enemy/hit_effect/hit_effect.gd" id="1_glg62"]
+[ext_resource type="Script" uid="uid://bvkb6d3rbx004" path="res://_ENTITIES/units3D/enemy/hit_effect/hit_effect.gd" id="1_glg62"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7blnw"]
 size = Vector3(1.9, 1.9, 1.9)

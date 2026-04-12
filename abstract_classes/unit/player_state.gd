@@ -3,7 +3,7 @@ extends Node
 
 signal state_changed(next_state: StringName)
 
-var base: Player
+var base: Player3D
 
 
 func _init() -> void:

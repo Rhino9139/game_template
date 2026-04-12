@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgavkkcru5pfk"]
 
-[ext_resource type="Script" uid="uid://be75r4dnfnepf" path="res://_ENTITIES/units/enemy/cube_enemy.gd" id="1_3q4gx"]
-[ext_resource type="PackedScene" uid="uid://bdr3s4fqjuctj" path="res://_ENTITIES/units/enemy/hit_effect/hit_effect.tscn" id="2_mhejt"]
+[ext_resource type="Script" uid="uid://be75r4dnfnepf" path="res://_ENTITIES/units3D/enemy/cube_enemy.gd" id="1_3q4gx"]
+[ext_resource type="PackedScene" uid="uid://bdr3s4fqjuctj" path="res://_ENTITIES/units3D/enemy/hit_effect/hit_effect.tscn" id="2_mhejt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhejt"]
 size = Vector3(2, 2, 2)

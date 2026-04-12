@@ -1,4 +1,4 @@
-class_name WorldSystem
+class_name LevelSystem
 extends System
 
 
@@ -8,4 +8,4 @@ static func ADD_SECTOR(path: String) -> void:
 
 
 func _init() -> void:
-	WORLD = self
+	LEVEL = self

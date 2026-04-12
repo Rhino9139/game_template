@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cotvempp6bces"]
 
-[ext_resource type="Script" uid="uid://c21eppvfboj8b" path="res://_ENTITIES/worlds/levels/sector_1.gd" id="1_7wuqq"]
-[ext_resource type="Material" uid="uid://jchuod3vn07t" path="res://_ENTITIES/_common/materials/prototype/proto_mat.tres" id="2_cr10s"]
+[ext_resource type="Script" uid="uid://c21eppvfboj8b" path="res://_ENTITIES/levels/3D_levels/level_1.gd" id="1_taqbd"]
+[ext_resource type="Material" uid="uid://jchuod3vn07t" path="res://_ENTITIES/_common/materials/prototype/proto_mat.tres" id="2_f81hp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7wuqq"]
 sky_top_color = Color(0.156329, 0.63456875, 0.91888875, 1)
@@ -16,14 +16,14 @@ background_mode = 2
 sky = SubResource("Sky_y6vb4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7wuqq"]
-material = ExtResource("2_cr10s")
+material = ExtResource("2_f81hp")
 size = Vector2(200, 200)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cr10s"]
 points = PackedVector3Array(-1000, 0, -1000, -1000, 0, 1000, 1000, 0, -1000, 1000, 0, 1000)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cr10s"]
-material = ExtResource("2_cr10s")
+material = ExtResource("2_f81hp")
 size = Vector3(10, 20, 100)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r10m3"]
@@ -44,8 +44,8 @@ points = PackedVector3Array(-5, -10, -50, 5, -10, -50, -5, -10, 50, -5, 10, -50,
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c2gmo"]
 points = PackedVector3Array(-5, -10, -50, 5, -10, -50, -5, -10, 50, -5, 10, -50, 5, 10, -50, 5, -10, 50, -5, 10, 50, 5, 10, 50)
 
-[node name="Sector1" type="Node3D" unique_id=1465893774]
-script = ExtResource("1_7wuqq")
+[node name="Level1" type="Node3D" unique_id=1465893774]
+script = ExtResource("1_taqbd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=429978600]
 environment = SubResource("Environment_cr10s")

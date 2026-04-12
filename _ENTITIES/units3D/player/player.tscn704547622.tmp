@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dyd2a5m0ql71m"]
+
+[ext_resource type="Script" uid="uid://17qquntmr72a" path="res://_ENTITIES/units3D/player/player.gd" id="1_x7ek6"]
+[ext_resource type="Script" uid="uid://dkxp5tuesiha6" path="res://abstract_classes/unit/player_state_machine.gd" id="2_l3yoa"]
+[ext_resource type="Material" uid="uid://d31jnsnbeyyf1" path="res://_ENTITIES/_common/materials/fresnel/fresnel_mat.tres" id="2_s1j4c"]
+[ext_resource type="Script" uid="uid://bqad74hgxe0gy" path="res://_ENTITIES/units3D/player/states/move_state.gd" id="3_xmqgs"]
+[ext_resource type="Script" uid="uid://d21pfuceijeuv" path="res://_ENTITIES/units3D/player/states/jump_state.gd" id="4_qk06k"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_77vtv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_31eee"]
+material = ExtResource("2_s1j4c")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t28kf"]
+radius = 0.1
+
+[node name="Player3D" type="CharacterBody3D" unique_id=904708815 node_paths=PackedStringArray("camera", "cam_h", "cam_v", "cam_raycast", "projectile_marker")]
+collision_layer = 128
+script = ExtResource("1_x7ek6")
+camera = NodePath("CamHorizontal/CamVertical/CamSpringArm/Camera3D")
+cam_h = NodePath("CamHorizontal")
+cam_v = NodePath("CamHorizontal/CamVertical")
+cam_raycast = NodePath("CamHorizontal/CamVertical/CamSpringArm/Camera3D/CamRaycast")
+projectile_marker = NodePath("ProjectileMarker")
+
+[node name="Hitbox" type="CollisionShape3D" parent="." unique_id=256609376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_77vtv")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=908111042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("SphereMesh_31eee")
+
+[node name="ProjectileMarker" type="Marker3D" parent="." unique_id=208205160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CamHorizontal" type="Node3D" parent="." unique_id=266509013]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0)
+top_level = true
+
+[node name="CamVertical" type="Node3D" parent="CamHorizontal" unique_id=1279285179]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 1, 0)
+
+[node name="CamSpringArm" type="SpringArm3D" parent="CamHorizontal/CamVertical" unique_id=80996750]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
+shape = SubResource("SphereShape3D_t28kf")
+spring_length = 15.0
+
+[node name="Camera3D" type="Camera3D" parent="CamHorizontal/CamVertical/CamSpringArm" unique_id=1630646991]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0)
+current = true
+fov = 60.0
+
+[node name="CamRaycast" type="RayCast3D" parent="CamHorizontal/CamVertical/CamSpringArm/Camera3D" unique_id=1029910314]
+enabled = false
+target_position = Vector3(0, 0, -200)
+collision_mask = 3
+
+[node name="StateMachine" type="Node" parent="." unique_id=2032242146 node_paths=PackedStringArray("base")]
+script = ExtResource("2_l3yoa")
+base = NodePath("..")
+
+[node name="MoveState" type="Node" parent="StateMachine" unique_id=606312891]
+script = ExtResource("3_xmqgs")
+metadata/_custom_type_script = "uid://brvax62uulys"
+
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=1536879333]
+script = ExtResource("4_qk06k")
+metadata/_custom_type_script = "uid://brvax62uulys"

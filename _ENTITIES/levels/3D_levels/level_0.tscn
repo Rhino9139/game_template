@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cadk6ard0gt6q"]
 
 [ext_resource type="Material" uid="uid://xhdbk0gxdtkn" path="res://common/textures/materials/black_mat.tres" id="1_7af3o"]
-[ext_resource type="Script" uid="uid://o7tciy7mrmiw" path="res://_ENTITIES/worlds/levels/level_0.gd" id="1_xiy3f"]
+[ext_resource type="Script" uid="uid://o7tciy7mrmiw" path="res://_ENTITIES/levels/3D_levels/level_0.gd" id="1_xiy3f"]
 [ext_resource type="Material" uid="uid://dniwyrsdmuuah" path="res://common/textures/materials/orange_mat.tres" id="2_mxpki"]
-[ext_resource type="PackedScene" uid="uid://dgavkkcru5pfk" path="res://_ENTITIES/units/enemy/cube_enemy.tscn" id="4_yli18"]
+[ext_resource type="PackedScene" uid="uid://dgavkkcru5pfk" path="res://_ENTITIES/units3D/enemy/cube_enemy.tscn" id="4_yli18"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oe4wt"]
 sky_top_color = Color(0.156329, 0.63456875, 0.91888875, 1)

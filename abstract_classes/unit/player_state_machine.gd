@@ -1,7 +1,7 @@
 class_name PlayerStateMachine
 extends Node
 
-@export var base: Player
+@export var base: Player3D
 
 var states: Dictionary[StringName, PlayerState]
 var current_state: PlayerState

@@ -1,4 +1,4 @@
-class_name Player
+class_name Player3D
 extends Unit
 
 @export_group("Camera")
