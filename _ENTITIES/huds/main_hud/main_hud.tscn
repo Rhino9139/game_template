@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dbr2bbcir5wm3"]
+
+[ext_resource type="Script" uid="uid://cgcqv12a060bn" path="res://_ENTITIES/huds/main_hud/main_hud.gd" id="1_lgxck"]
+
+[sub_resource type="Gradient" id="Gradient_v3xft"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0.57254905, 0.50980395, 0.19607843)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jylu8"]
+gradient = SubResource("Gradient_v3xft")
+
+[sub_resource type="Gradient" id="Gradient_dqvmk"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p87lp"]
+gradient = SubResource("Gradient_dqvmk")
+
+[node name="MainHud" type="Control" unique_id=867519128]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_lgxck")
+
+[node name="Healthbar" type="TextureProgressBar" parent="." unique_id=1688741704]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -40.0
+offset_right = 280.0
+offset_bottom = -16.0
+grow_vertical = 0
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_jylu8")
+texture_progress = SubResource("GradientTexture1D_p87lp")

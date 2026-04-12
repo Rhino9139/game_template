@@ -1,0 +1,9 @@
+extends Node
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.is_pressed():
+			if event.keycode == KEY_ESCAPE:
+				print("DEV QUIT")
+				get_tree().quit()

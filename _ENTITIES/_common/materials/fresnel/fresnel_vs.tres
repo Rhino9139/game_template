@@ -1,0 +1,22 @@
+[gd_resource type="VisualShader" format=3 uid="uid://dv2s4gqj7xbo7"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_84usi"]
+parameter_name = "BaseColor"
+default_value_enabled = true
+default_value = Color(0, 0.720339, 2.5027991e-06, 1)
+
+[sub_resource type="VisualShaderNodeFresnel" id="VisualShaderNodeFresnel_84usi"]
+default_input_values = [2, true, 3, 1.0]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_38k2c"]
+operator = 2
+
+[resource]
+nodes/fragment/0/position = Vector2(580, -60)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_84usi")
+nodes/fragment/2/position = Vector2(-80, 0)
+nodes/fragment/3/node = SubResource("VisualShaderNodeFresnel_84usi")
+nodes/fragment/3/position = Vector2(-80, -220)
+nodes/fragment/5/node = SubResource("VisualShaderNodeVectorOp_38k2c")
+nodes/fragment/5/position = Vector2(240, -140)
+nodes/fragment/connections = PackedInt32Array(3, 0, 5, 0, 2, 0, 5, 1, 5, 0, 0, 0)

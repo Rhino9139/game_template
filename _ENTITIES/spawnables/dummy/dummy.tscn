@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cbybt0wqyw6xe"]
+
+[ext_resource type="Script" uid="uid://b0otxr73eg5st" path="res://_ENTITIES/spawnables/dummy/dummy.gd" id="1_fcv1d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_srxce"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fcv1d"]
+material = SubResource("StandardMaterial3D_srxce")
+
+[node name="Dummy" type="Node3D" unique_id=2070147962]
+script = ExtResource("1_fcv1d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=690665953]
+mesh = SubResource("SphereMesh_fcv1d")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=1758432459]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

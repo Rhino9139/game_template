@@ -1,33 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpwc0pahmu2lw"]
+[gd_scene format=3 uid="uid://cpwc0pahmu2lw"]
 
 [ext_resource type="Script" uid="uid://4utau75kf3sj" path="res://__GAME/game.gd" id="1_2ilop"]
-[ext_resource type="Script" uid="uid://bcchncd60rclc" path="res://_NETWORK/roster/roster.gd" id="2_li6ea"]
-[ext_resource type="Script" uid="uid://cehx73ids6s8b" path="res://_NETWORK/network_agent/network_agent.gd" id="4_b2ajd"]
-[ext_resource type="Script" uid="uid://dbctvs60t1auo" path="res://_GUI/menu/menu.gd" id="8_d0jka"]
-[ext_resource type="Script" uid="uid://bkham1wurmxsm" path="res://_GUI/hud/hud.gd" id="8_gli1n"]
+[ext_resource type="Script" uid="uid://cawdug2ywcffg" path="res://_SYSTEMS/world_system.gd" id="2_4elfq"]
+[ext_resource type="Script" uid="uid://dusgpr8r80s78" path="res://abstract_classes/global/system.gd" id="2_08wj8"]
+[ext_resource type="Script" uid="uid://crcelr7naukm4" path="res://_SYSTEMS/hud_system.gd" id="2_walkk"]
+[ext_resource type="Script" uid="uid://da1hpsxfnt1yg" path="res://_SYSTEMS/menu_system.gd" id="3_jd8g8"]
+[ext_resource type="Script" uid="uid://d3sktskjb554d" path="res://_SYSTEMS/spawnable_system.gd" id="3_ptnr8"]
+[ext_resource type="Script" uid="uid://buu45hved20q8" path="res://_SYSTEMS/unit_system.gd" id="3_rejnc"]
+[ext_resource type="Script" uid="uid://n5ouxeqfccbf" path="res://_LOGIC/logic.gd" id="8_nio1a"]
+[ext_resource type="Script" uid="uid://c30njq2xipsg7" path="res://_LOGIC/__devoloper.gd" id="10_gdj81"]
+[ext_resource type="Script" uid="uid://c6egol0x1jovv" path="res://abstract_classes/global/library.gd" id="10_pybne"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" unique_id=510145344]
 script = ExtResource("1_2ilop")
 
-[node name="MasterNetwork" type="Node" parent="."]
-process_mode = 4
-
-[node name="_Roster" type="Node" parent="MasterNetwork" node_paths=PackedStringArray("player_spawner", "player_list")]
-script = ExtResource("2_li6ea")
-player_spawner = NodePath("PlayerSpawner")
-player_list = NodePath("PlayerList")
-metadata/_custom_type_script = "uid://bcchncd60rclc"
-
-[node name="PlayerList" type="Node" parent="MasterNetwork/_Roster"]
-
-[node name="PlayerSpawner" type="MultiplayerSpawner" parent="MasterNetwork/_Roster"]
-spawn_path = NodePath("../PlayerList")
-
-[node name="_NetworkAgent" type="Node" parent="MasterNetwork"]
-script = ExtResource("4_b2ajd")
-metadata/_custom_type_script = "uid://cehx73ids6s8b"
-
-[node name="MasterGUI" type="Control" parent="."]
+[node name="GUI" type="Control" parent="." unique_id=436569071]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,30 +24,48 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="_Menu" type="Control" parent="MasterGUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("8_d0jka")
-metadata/_custom_type_script = "uid://dbctvs60t1auo"
+[node name="3D" type="Node3D" parent="." unique_id=1685629066]
+unique_name_in_owner = true
 
-[node name="_HUD" type="Control" parent="MasterGUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("8_gli1n")
-metadata/_custom_type_script = "uid://bkham1wurmxsm"
+[node name="System" type="Node" parent="." unique_id=972332308]
+process_mode = 4
+script = ExtResource("2_08wj8")
+metadata/_custom_type_script = "uid://dusgpr8r80s78"
 
-[node name="Master3D" type="Node3D" parent="."]
+[node name="HUD" type="Node" parent="System" unique_id=611021442]
+process_mode = 4
+script = ExtResource("2_walkk")
+metadata/_custom_type_script = "uid://crcelr7naukm4"
 
-[node name="_World" type="Node3D" parent="Master3D"]
+[node name="Menu" type="Node" parent="System" unique_id=1909258719]
+process_mode = 4
+script = ExtResource("3_jd8g8")
+metadata/_custom_type_script = "uid://da1hpsxfnt1yg"
 
-[node name="_Unit" type="Node3D" parent="Master3D"]
+[node name="Spawnable" type="Node" parent="System" unique_id=692537742]
+script = ExtResource("3_ptnr8")
+metadata/_custom_type_script = "uid://d3sktskjb554d"
+
+[node name="Unit" type="Node" parent="System" unique_id=2113398708]
+process_mode = 4
+script = ExtResource("3_rejnc")
+metadata/_custom_type_script = "uid://buu45hved20q8"
+
+[node name="World" type="Node" parent="System" unique_id=819818766]
+process_mode = 4
+script = ExtResource("2_4elfq")
+metadata/_custom_type_script = "uid://cawdug2ywcffg"
+
+[node name="Logic" type="Node" parent="." unique_id=557742448]
+script = ExtResource("8_nio1a")
+metadata/_custom_type_script = "uid://n5ouxeqfccbf"
+
+[node name="Developer" type="Node" parent="Logic" unique_id=1873232998]
+process_mode = 3
+script = ExtResource("10_gdj81")
+metadata/_custom_type_script = "uid://c30njq2xipsg7"
+
+[node name="Library" type="Node" parent="Logic" unique_id=1900288634]
+process_mode = 4
+script = ExtResource("10_pybne")
+metadata/_custom_type_script = "uid://c6egol0x1jovv"

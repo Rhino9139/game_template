@@ -6,7 +6,7 @@ static var GAMER_TAG: String
 
 func _ready() -> void:
 	configure_settings()
-	Events.MENU_END.change_menu.emit(Menu.GameObject.MAIN)
+	Logic.OPEN_GAME()
 
 
 func configure_settings() -> void:

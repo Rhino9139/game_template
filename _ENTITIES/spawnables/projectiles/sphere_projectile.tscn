@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dkrlq184tc86v"]
+
+[ext_resource type="Script" uid="uid://by2fwlr25knle" path="res://_ENTITIES/spawnables/projectiles/sphere_projectile.gd" id="1_kfush"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dgcts"]
+radius = 0.25
+
+[sub_resource type="SphereMesh" id="SphereMesh_kfush"]
+radius = 0.25
+height = 0.5
+radial_segments = 16
+rings = 16
+
+[node name="SphereProjectile" type="ShapeCast3D" unique_id=490880467]
+shape = SubResource("SphereShape3D_dgcts")
+exclude_parent = false
+target_position = Vector3(0, 0, 0)
+collision_mask = 2
+script = ExtResource("1_kfush")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1848012896]
+mesh = SubResource("SphereMesh_kfush")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=36992614]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

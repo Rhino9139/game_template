@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bdr3s4fqjuctj"]
+
+[ext_resource type="Script" uid="uid://bvkb6d3rbx004" path="res://_ENTITIES/units/enemy/hit_effect/hit_effect.gd" id="1_glg62"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7blnw"]
+size = Vector3(1.9, 1.9, 1.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glg62"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.49019608)
+
+[node name="HitEffect" type="MeshInstance3D" unique_id=427630566]
+mesh = SubResource("BoxMesh_7blnw")
+script = ExtResource("1_glg62")
+mat = SubResource("StandardMaterial3D_glg62")

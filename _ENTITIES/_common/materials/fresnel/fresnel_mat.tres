@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d31jnsnbeyyf1"]
+
+[ext_resource type="Shader" uid="uid://dv2s4gqj7xbo7" path="res://_ENTITIES/_common/materials/fresnel/fresnel_vs.tres" id="1_c1nse"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_c1nse")
+shader_parameter/BaseColor = Color(0, 0.768935, 0, 1)
