@@ -61,9 +61,11 @@ script = ExtResource("2_l3yoa")
 base = NodePath("..")
 
 [node name="MoveState" type="Node" parent="StateMachine" unique_id=606312891]
+unique_name_in_owner = true
 script = ExtResource("3_xmqgs")
 metadata/_custom_type_script = "uid://brvax62uulys"
 
 [node name="JumpState" type="Node" parent="StateMachine" unique_id=1536879333]
+unique_name_in_owner = true
 script = ExtResource("4_qk06k")
 metadata/_custom_type_script = "uid://brvax62uulys"

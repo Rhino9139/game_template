@@ -7,7 +7,7 @@ func process_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("primary_action"):
 		base.primary_fire()
 	elif event.is_action_pressed("jump"):
-		state_changed.emit(&"JumpState")
+		state_changed.emit(%JumpState)
 
 
 func physics_update(delta: float) -> void:

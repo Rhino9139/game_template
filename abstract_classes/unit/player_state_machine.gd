@@ -9,9 +9,10 @@ var current_state: PlayerState
 
 func _ready() -> void:
 	for child in get_children():
-		states[child.name] = child
-		child.base = base
-		child.state_changed.connect(_on_state_changed)
+		if child is PlayerState:
+			states[child.name] = child
+			child.base = base
+			child.state_changed.connect(_state_changed)
 	set_starting_state()
 
 
@@ -32,7 +33,7 @@ func set_starting_state() -> void:
 	current_state.enter()
 
 
-func _on_state_changed(new_state: StringName) -> void:
+func _state_changed(new_state: PlayerState) -> void:
 	current_state.exit()
-	states[new_state].enter()
-	current_state = states[new_state]
+	current_state = new_state
+	new_state.enter()

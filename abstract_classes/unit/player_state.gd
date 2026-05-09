@@ -1,7 +1,7 @@
 class_name PlayerState
 extends Node
 
-signal state_changed(next_state: StringName)
+signal state_changed(new_state: PlayerState)
 
 var base: Player3D
 
@@ -30,5 +30,5 @@ func physics_update(_delta: float) -> void:
 	pass
 
 
-func _dummy() -> void:
-	state_changed.emit()
+func __DUMMY() -> void:
+	state_changed.emit(null)

@@ -22,4 +22,4 @@ func physics_update(delta: float) -> void:
 	base.handle_controller_turn(delta)
 	base.move_and_slide()
 	if base.is_on_floor() and !locked:
-		state_changed.emit(&"MoveState")
+		state_changed.emit(%MoveState)
